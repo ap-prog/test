@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>test</title>
+<style>
+:root {
+  --layout-width:640px;
+  --layout-con-width:662px;
+  --layout-height:480px;
+  --layout-con-height:502px;
+}
+#layout_con {
+  position:absolute;
+  left:0;
+  top:0;
+  width:100%;
+  height:100%;
+  background-color: black;
+  display:grid;
+  grid-template-columns: 140px 5px minmax(auto, var(--layout-con-width));
+  grid-template-rows: 28px minmax(auto, var(--layout-con-height)) 25px 1fr;
+  grid-column-gap: 2px;
+  grid-row-gap: 2px;
+}
+#layout_slide_controls {
+  display:grid;
+  background-color: #123984;
+  grid-column: 1;
+  grid-row: 1 / 5;
+}
+#current {
+  color:white;
+  margin-top:0;
+  margin-bottom:0;
+  background-color: darkgray;
+  overflow-y: auto;
+}
+#grid_spacer {
+  background-color: #980044;
+  grid-column: 2;
+  grid-row: 1 / 5;
+}
+#layout_controls {
+  background-color: #346354;
+  grid-column: 3;
+  grid-row: 1;
+}
+#layout_frame {
+  background-color: #555555;
+  grid-column: 3;
+  grid-row: 2;
+  overflow: auto;
+}
+#layout {
+  border:0;
+  width: var(--layout-width);
+  height: var(--layout-height);
+}
+#layout_title {
+  background-color: #872287;
+  grid-column: 3;
+  grid-row: 3;
+}
+</style>
+</head>
+
+<body>
+  <div id="layout_con">
+    <div id="layout_slide_controls">
+      <ol id="current">
+        <li>a</li><li>a</li><li>a</li><li>a</li><li>a</li><li>a</li>
+        <li>< !- -a</li><li>a</li><li>a</li><li>a</li><li>a</li><li>a</li>
+        <li>a</li><li>a</li><li>a</li><li>a</li><li>a</li><li>a</li>
+        <li>a</li><li>a</li><li>a</li><li>a</li><li>a</li><li>a</li>
+        <li>a</li><li>a</li><li>a</li><li>a</li><li>a</li><li>a</li>
+        <li>a</li><li>a</li><li>a</li><li>a</li><li>a</li><li>-->a</li>
+      </ol>
+    </div>
+    <div id="grid_spacer"> </div>
+    <div id="layout_controls">controls</div>
+    <div id="layout_frame">
+      <iframe id="layout" src="https://news.ycombinator.com/"></iframe>
+    </div>
+    <div id="layout_title">title</div>
+  </div>
+</html>
